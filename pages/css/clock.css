@@ -1,0 +1,30 @@
+* {
+    font-family: 'Bebas Neue', sans-serif;
+}
+#hour-marks {
+    fill: transparent;
+    stroke: #E5D9D9;
+    stroke-width: 7;
+    stroke-dasharray: 0.2, 4.8;
+    stroke-dashoffset: 0.1;
+}
+
+#minute-marks {
+    fill: transparent;
+    stroke: #0f0e0e;
+    stroke-width: 7;
+    stroke-dasharray: 0.2, 0.8;
+    stroke-dashoffset: 0.1;
+}
+
+.hand {
+    x1: "0";
+    y1: "0";
+    x2: "0";
+    stroke: #E5D9D9;
+    stroke-linecap: round;
+}
+
+#daydate {
+    font-size: 10px;
+}

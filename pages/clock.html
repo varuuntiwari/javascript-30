@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Clock</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/clock.css">
+    </head>
+    <body class="center">
+        <svg id="board" width="300" height="300" viewBox="-50 -50 100 100">
+            <circle cx=0 cy=0 r="45" id="minute-marks" pathlength=60 />
+            <circle cx=0 cy=0 r="45" id="hour-marks" pathlength=60 />
+            <text id="daydate" x=10 y=2.5 fill="#E5D9D9"></text>
+            <g id="hour">
+                <line class="hand" y2="-25" stroke-width="1.5" />
+            </g>
+            <g id="min">
+                <line class="hand" y2="-30" stroke-width="1" />
+            </g>
+            <g id="sec">
+                <line class="hand" y2="-35" stroke-width="0.5" />
+            </g>
+            <circle cx="0" cy="0" r="2" fill="#000000" />
+        </svg>
+        <script>
+            const hoursElement = document.getElementById("hour");
+            const minutesElement = document.getElementById("min");
+            const secondsElement = document.getElementById("sec");
+            const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+            function animate() {
+                const date = new Date();
+                document.getElementById('daydate').textContent = (days[date.getDay()]+" "+date.getDate());
+                const hour = date.getHours() + date.getMinutes() / 60;
+                const minute = date.getMinutes() + date.getSeconds() / 60;
+                const second = date.getSeconds() + date.getMilliseconds() / 1000;
+                console.log(hour+":"+minute+":"+second);
+                hoursElement.setAttribute("transform", `rotate(${(360 / 12) * hour})`);
+                minutesElement.setAttribute("transform", `rotate(${(360 / 60) * minute})`);
+                secondsElement.setAttribute("transform", `rotate(${(360 / 60) * second})`);
+
+                requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+        </script>
+    </body>
+</html>
