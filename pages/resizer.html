@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Image Resizer</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="css/resizer.css">
+        <script src="scripts/resizer.js"></script>
+    </head>
+    <body class="center">
+        <div class="center" id="area">
+            <div class="node center" id="img-wrapper">
+                <img id="image" src="css/img/resizing.jpg">
+            </div>
+            <div class="node" id="sliders">
+                <div class="slider">
+                    <input id="spacing" type="range" min="0" max="100" value="0" data-sizing="px">
+                    <br><br>Spacing
+                </div>
+                <div class="slider">
+                    <input id="blur" type="range" min="0" max="20" value="0" data-sizing="px">
+                    <div id="blurval">0</div>
+                    Blur
+                </div>
+                <div class="slider">
+                    <input id="color" type="color">
+                    <br><br>Background Color
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+* {
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+}
+
+:root {
+    --bg-color: #000000;
+    --blur: 0px;
+    --spacing: 0px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    width: 25vw;
+    height: 50vh;
+}
+
+#img-wrapper {
+    width: 100%;
+    height: 80%;
+}
+
+#image {
+    filter: blur(var(--blur));
+    padding: var(--spacing) 0 0 var(--spacing);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#area {
+    width: 90%;
+    height: 90%;
+    flex-flow: column nowrap;
+}
+
+.node {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px;
+    width: 100%;
+}
+
+#sliders {
+    justify-content: space-evenly;
+    flex-flow: row nowrap;
+    height: 20%;
+    width: 100%;
+}
+
+.slider {
+    text-align: center;
+    height: 100%;
+    width: 30%;
+}
+
+@media only screen and (max-width: 800px) {
+    img {
+        width: 40vw;
+        height: 15vh;
+    }
+    #sliders {
+        flex-flow: column nowrap;
+    }
+    .slider {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
