@@ -1,7 +1,9 @@
 window.onload = () => {
+    // Sets backgrounds for all panels
     const panels = document.querySelectorAll('.wrapper-node');
     panels.forEach(panel => { panel.style.backgroundImage = "url('"+panel.getAttribute('data-content')+"')"; });
 
+    // Check for window size and resize panels accordingly
     function highlight(panel) {
         if(window.innerWidth > 800) {
             panels.forEach(e => { if(e !== panel) { e.style.width = "15vw"; }});
